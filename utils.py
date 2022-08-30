@@ -93,10 +93,6 @@ def generate_filename():
     time_str = datetime.now().strftime('%Y-%m-%d_%H-%M-%S')
     name_ = 'saved_exam_' + time_str
     results_dir_ = os.path.join(results_dir, name_)
-    try:
-        os.mkdir(results_dir_)
-    except:
-        pass
     return results_dir_
 
 

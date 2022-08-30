@@ -98,7 +98,7 @@ class Examiner():
         print("Starting exam...")
         time.sleep(1)
         self.exam_loop()
-        self.get_progress()
+        self.print_overall_info()
         print("\nCongratulations! You completed the exam!")
 
 
@@ -118,7 +118,6 @@ def main():
     print("")
     examiner.start_exam()
 
-    pdb.set_trace()
     print("Done!")
 
 

@@ -1,9 +1,14 @@
-
-
-class Question():
-
-    def __init__(self, content, subquestions=None, title=None, section=None,
-                 subsection=None, subsubsection=None, answer=None):
+class Question:
+    def __init__(
+        self,
+        content,
+        subquestions=None,
+        title=None,
+        section=None,
+        subsection=None,
+        subsubsection=None,
+        answer=None,
+    ):
 
         self.content = content
         self.subquestions = subquestions
@@ -20,14 +25,13 @@ class Question():
         print("Section:", self.section)
         print("Subsection:", self.subsection)
         print("Subsubection:", self.subsubsection)
-    
+
     def print_subquestions(self):
         for q in self.subquestions:
             print(q.content)
 
     def print_question(self):
         pass
-    
+
     def print_answer(self):
         pass
-

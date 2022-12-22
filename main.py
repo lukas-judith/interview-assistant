@@ -7,11 +7,7 @@ from utils import *
 import numpy as np
 
 
-
-
-
-class Examiner():
-
+class Examiner:
     def __init__(self, questions):
 
         self.questions_unanswered = questions
@@ -23,11 +19,11 @@ class Examiner():
         """
         Clear console.
         """
-        os.system('clear')
+        os.system("clear")
 
     def get_progress(self):
         n_answered = len(self.questions_answered)
-        perc = n_answered/self.n_questions_total * 100
+        perc = n_answered / self.n_questions_total * 100
         out = f"{perc:.2f}%   " + get_progress_bar_string(perc)
         out += f"\nQuestions answered: {n_answered}"
         out += f"\nQuestions in total: {self.n_questions_total}"
@@ -40,11 +36,11 @@ class Examiner():
 
     def prompt_question(self, question):
         start_txt = f"\nQuestion from {question.section}"
-        if not question.subsection is None: 
+        if not question.subsection is None:
             start_txt += f", {question.subsection}"
-        if not question.subsubsection is None: 
+        if not question.subsubsection is None:
             start_txt += f", {question.subsubsection}"
-        print(start_txt+"\n")
+        print(start_txt + "\n")
         print(question.content)
 
     def save_exam(self):
@@ -59,9 +55,10 @@ class Examiner():
 
     def answer_correct(self, offset_str=""):
         """
-        Asks whether question could be answered, otherwise return it into self.questions_unanswered.
+        Asks whether question could be answered, otherwise return it into
+        self.questions_unanswered.
         """
-        ans = input(offset_str+"Answered correctly? [yes]/no ")
+        ans = input(offset_str + "Answered correctly? [yes]/no ")
         if ans.lower() == "save":
             self.save_exam()
         return ans.lower() in ["", "yes", "y"]
@@ -77,15 +74,17 @@ class Examiner():
             self.prompt_question(question)
 
             all_correct = True
-            if not self.answer_correct(): all_correct = False                
+            if not self.answer_correct():
+                all_correct = False
 
             if len(question.subquestions) > 0:
                 print("\nFollow-up questions:")
             for i, subq in enumerate(question.subquestions):
                 print(f"\n\t{subq.content}")
-                if not self.answer_correct("\t"): all_correct = False
+                if not self.answer_correct("\t"):
+                    all_correct = False
 
-            # only if all subquestions were answered correctly, 
+            # only if all subquestions were answered correctly,
             # the question will count as answered
             if all_correct:
                 self.questions_unanswered.pop(rnd)
@@ -121,7 +120,5 @@ def main():
     print("Done!")
 
 
-
-
-if __name__=='__main__':
+if __name__ == "__main__":
     main()

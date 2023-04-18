@@ -1,6 +1,6 @@
-# Oral Examiner
+# Interview Assistant
 
-This code was written in preparation for an oral examination during my postgraduate studies at Heidelberg University. The program simulates an oral exam, using lists of questions stored in Markdown (.md) files. Proper formatting of the questions is illustrated in the example file *questions.md*. Questions appear in randomized order. Current progress of an exam can be saved at any time, so that it can be resumed later.
+This code was written in preparation for an oral examination during my postgraduate studies at Heidelberg University. The program simulates an interview or oral exam, using lists of questions stored in Markdown (.md) files. Proper formatting of the questions is illustrated in the example file *questions.md*. Questions appear in randomized order. Current progress of an exam can be saved at any time, so that it can be resumed later.
 
 
 
